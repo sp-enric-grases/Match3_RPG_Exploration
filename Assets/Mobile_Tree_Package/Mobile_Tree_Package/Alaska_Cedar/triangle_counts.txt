@@ -1,0 +1,3 @@
+AlaskaCedar_Mobile.spm: 989
+AlaskaCedar_Mobile_Bare.spm: 1272
+AlaskaCedar_Mobile_Young.spm: 541

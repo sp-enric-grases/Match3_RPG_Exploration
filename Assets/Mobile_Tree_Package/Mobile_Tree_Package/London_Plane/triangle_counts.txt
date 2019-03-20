@@ -1,0 +1,8 @@
+Leaf_Map_Maker_Mobile_Modeler_Use_Only.spm: 7994
+Leaf_Map_Maker_Mobile_2_Modeler_Use_Only.spm: 8045
+Leaf_Map_Maker_Mobile_Fall_Modeler_Use_Only.spm: 7988
+Leaf_Map_Maker_Mobile_Fall_2_Modeler_Use_Only.spm: 8285
+Leaf_Map_Maker_Mobile_Winter_Modeler_Use_Only.spm: 9438
+London_Plane_Mobile.spm: 1000
+London_Plane_Mobile_Fall.spm: 1000
+London_Plane_Mobile_Winter.spm: 978

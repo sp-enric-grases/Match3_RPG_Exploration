@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!121 &12100000
+Flare:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: FLARE_sun_StormWard
+  m_FlareTexture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+  m_TextureLayout: 2
+  m_Elements:
+  - m_ImageIndex: 1
+    m_Position: 0
+    m_Size: 1.66
+    m_Color: {r: 0.4433962, g: 0.3157619, b: 0.064836234, a: 0.9019608}
+    m_UseLightColor: 1
+    m_Rotate: 0
+    m_Zoom: 1
+    m_Fade: 1
+  m_UseFog: 1

@@ -1,0 +1,10 @@
+American_Elm_Mobile.spm: 1104
+American_Elm_Mobile_Bare.spm: 1067
+American_Elm_Mobile_Fall.spm: 996
+Leaf_Card_Maker_Mobile_Modeler_Use_Only.spm: 8736
+Leaf_Card_Maker_Mobile_Fall_Modeler_Use_Only.spm: 8739
+Leaf_Map_Maker_Mobile_1_Modeler_Use_Only.spm: 27007
+Leaf_Map_Maker_Mobile_2_Modeler_Use_Only.spm: 24947
+Leaf_Map_Maker_Mobile_Bare_Modeler_Use_Only.spm: 8982
+Leaf_Map_Maker_Mobile_Fall_1_Modeler_Use_Only.spm: 26907
+Leaf_Map_Maker_Mobile_Fall_2_Modeler_Use_Only.spm: 24871
