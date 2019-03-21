@@ -76,8 +76,8 @@ namespace SocialPoint.Tools
         {
             if (Input.touchCount == 1)
             {
-                rotX += Input.GetTouch(0).deltaPosition.x / GetComponent<Camera>().pixelWidth * Time.deltaTime * sensibility * SENSIBILITY;
-                rotY += Input.GetTouch(0).deltaPosition.y / GetComponent<Camera>().pixelHeight * Time.deltaTime * sensibility * SENSIBILITY;
+                rotX += Input.GetTouch(0).deltaPosition.x / GetComponent<Camera>().pixelWidth * Time.deltaTime * sensibility * SENSIBILITY * (invertDirection ? 1 : -1);
+                rotY += Input.GetTouch(0).deltaPosition.y / GetComponent<Camera>().pixelHeight * Time.deltaTime * sensibility * SENSIBILITY * (invertDirection ? 1 : -1);
 
                 GetLimits();
             }
