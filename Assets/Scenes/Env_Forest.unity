@@ -28257,8 +28257,8 @@ MonoBehaviour:
   follow: 1
   refFollow: 1
   enemies:
-  - {fileID: 2129280679}
   - {fileID: 305636321}
+  - {fileID: 2129280679}
   - {fileID: 521785660}
   door: {fileID: 0}
   inf: []
