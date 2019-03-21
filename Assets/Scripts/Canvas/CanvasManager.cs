@@ -93,7 +93,8 @@ namespace SocialPoint.Tools
                         DestroyImmediate(hit.collider.gameObject);
                         break;
                     case "Chest":
-                        hit.collider.GetComponent<Chest>().CreateLootChest(this, lootPosition);
+                        //hit.collider.GetComponent<Chest>().CreateLootChest(this, lootPosition);
+                        hit.collider.GetComponent<Chest>().CreateLootChest();
                         break;
                     case "Crate":
                         hit.collider.GetComponent<Crate>().CreateLootCrate();

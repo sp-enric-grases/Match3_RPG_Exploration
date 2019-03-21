@@ -8,9 +8,6 @@ namespace SocialPoint.Tools
     {
         [Header("Private properties")]
         public GameObject brokenCrate;
-        public GameObject lootRoot;
-        public GameObject loot;
-        public Vector2 strength = new Vector2(100, 100);
         
         private List<GameObject> loots = new List<GameObject>();
 
@@ -24,7 +21,7 @@ namespace SocialPoint.Tools
         {
             CreateBrokenCrate();
             CreateLoot();
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
 
         public void CreateBrokenCrate()
@@ -35,22 +32,7 @@ namespace SocialPoint.Tools
             newCrate.transform.localScale = Vector3.one;
             newCrate.transform.parent = null;
 
-            AudioManager.Instance.PlayEffect(AudiosData.CRATE);
-        }
-
-        private void CreateLoot()
-        {
-            for (int i = 0; i < numLoot; i++)
-            {
-                GameObject newLoot = Instantiate(loot, lootRoot.transform.position, Quaternion.identity);
-                newLoot.GetComponent<Loot>().SettingConstraintProperties();
-                newLoot.SetActive(true);
-                Vector3 dir = newLoot.transform.position - Camera.main.transform.position;
-
-                newLoot.GetComponent<Rigidbody>().AddForce(Vector3.up * strength.y - dir * strength.x);
-            }
-
-            Destroy(gameObject);
+            AudioManager.Instance.PlayEffect(AudiosData.CRATE, 0.3f);
         }
     }
 }
