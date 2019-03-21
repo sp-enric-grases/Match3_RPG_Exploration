@@ -9,6 +9,7 @@ namespace SocialPoint.Tools
 
         public const string FOREST = "demo_amb_forest";
         public const string DUNGEONS = "demo_amb_dungeon";
+        public const string MUSIC = "demo_music";
         public const string CHEST = "demo_chest_open";
         public const string TREASURE = "Treasure";
         public const string CRATE = "demo_crate_explosion";

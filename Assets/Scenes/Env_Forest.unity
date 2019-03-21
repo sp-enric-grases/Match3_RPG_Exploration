@@ -3266,6 +3266,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114038881464586030, guid: 5720b12501efdf44a8cc1ce0ec1ee535,
+        type: 2}
+      propertyPath: clip.Array.size
+      value: 19
+      objectReference: {fileID: 0}
     - target: {fileID: 4050107531050146, guid: 5720b12501efdf44a8cc1ce0ec1ee535, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3303,6 +3308,41 @@ Prefab:
       propertyPath: m_Volume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114038881464586030, guid: 5720b12501efdf44a8cc1ce0ec1ee535,
+        type: 2}
+      propertyPath: clip.Array.data[13]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0acdac431d0c32a4c88fa233b29be161, type: 3}
+    - target: {fileID: 114038881464586030, guid: 5720b12501efdf44a8cc1ce0ec1ee535,
+        type: 2}
+      propertyPath: clip.Array.data[14]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8b1549301d8788d40b3ff452058926bf, type: 3}
+    - target: {fileID: 114395926669411050, guid: 5720b12501efdf44a8cc1ce0ec1ee535,
+        type: 2}
+      propertyPath: initFade
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114038881464586030, guid: 5720b12501efdf44a8cc1ce0ec1ee535,
+        type: 2}
+      propertyPath: clip.Array.data[15]
+      value: 
+      objectReference: {fileID: 8300000, guid: 45cb8ab8e8770b649b6e557f5e126d5e, type: 3}
+    - target: {fileID: 114038881464586030, guid: 5720b12501efdf44a8cc1ce0ec1ee535,
+        type: 2}
+      propertyPath: clip.Array.data[16]
+      value: 
+      objectReference: {fileID: 8300000, guid: 70c3a9fa59bea044891f4b40c23b715e, type: 3}
+    - target: {fileID: 114038881464586030, guid: 5720b12501efdf44a8cc1ce0ec1ee535,
+        type: 2}
+      propertyPath: clip.Array.data[17]
+      value: 
+      objectReference: {fileID: 8300000, guid: 101f361e648cf6a41ad8efb50a0dec66, type: 3}
+    - target: {fileID: 114038881464586030, guid: 5720b12501efdf44a8cc1ce0ec1ee535,
+        type: 2}
+      propertyPath: clip.Array.data[18]
+      value: 
+      objectReference: {fileID: 8300000, guid: 68c4ccd1165f1a742800ff7c4e1af721, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5720b12501efdf44a8cc1ce0ec1ee535, type: 2}
   m_IsPrefabAsset: 0
@@ -59854,6 +59894,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4571340626508028, guid: 226c6d08a1a160f439e6da6030b499e9,
     type: 2}
   m_PrefabInternal: {fileID: 2117613047}
+--- !u!1 &2120996928 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1111899430192476, guid: 62984973388c91b4289ae6b129d5faba,
+    type: 2}
+  m_PrefabInternal: {fileID: 1634434597}
+--- !u!114 &2120996929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2120996928}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087a234b59c8c4742877710c4acd8130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path1: {fileID: 519825868}
+  path2: {fileID: 910817955}
 --- !u!1001 &2123171597
 Prefab:
   m_ObjectHideFlags: 0

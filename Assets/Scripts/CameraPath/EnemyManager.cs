@@ -37,7 +37,7 @@ namespace SocialPoint.Tools
 
         public void Shake()
         {
-            AudioManager.Instance.PlayEffect(AudiosData.SLASH, 0.3f);
+            AudioManager.Instance.PlayEffect(AudiosData.SLASH);
             anim.SetTrigger("shake");
             numberOfHits--;
         }
@@ -49,7 +49,9 @@ namespace SocialPoint.Tools
             foreach (var item in loots)
                 item.SetActive(true);
 
-            AudioManager.Instance.PlayEffect(AudiosData.DEATH, 0.3f);
+            AudioManager.Instance.PlayEffect(AudiosData.DEATH);
+            string grunt = "Death_" + Random.Range(1, 6);
+            AudioManager.Instance.PlayEffect(grunt);
         }
 
         public void Dissapear()
