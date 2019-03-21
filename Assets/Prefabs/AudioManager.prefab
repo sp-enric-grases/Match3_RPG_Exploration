@@ -253,8 +253,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip:
-  - {fileID: 8300000, guid: e127432c234ffd44988a5927d27fd5e9, type: 3}
-  - {fileID: 8300000, guid: 77681fbf73b69b64a95d0b552b37994e, type: 3}
+  - {fileID: 8300000, guid: fb236b8e943dc4e73b7b12192f51908a, type: 3}
+  - {fileID: 8300000, guid: 00afeef1a828547c285dd9ef16c173c8, type: 3}
   - {fileID: 8300000, guid: 387b15fc897315f4dbdea49d1f3651f7, type: 3}
   - {fileID: 8300000, guid: 3205111cbcc828f4b974f632b89d887e, type: 3}
   - {fileID: 8300000, guid: c31f1e91ae2d1e14983091419075a4ec, type: 3}
@@ -266,6 +266,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: de2b04fde1f682447bb46aeeef6abfc7, type: 3}
   - {fileID: 8300000, guid: ab563170e9fec4a449d0970b6cf7c640, type: 3}
   - {fileID: 8300000, guid: 5aa0583bfb4d3104e8297cfb0b07e4b9, type: 3}
+  - {fileID: 8300000, guid: 0acdac431d0c32a4c88fa233b29be161, type: 3}
+  - {fileID: 8300000, guid: 8b1549301d8788d40b3ff452058926bf, type: 3}
+  - {fileID: 8300000, guid: 45cb8ab8e8770b649b6e557f5e126d5e, type: 3}
+  - {fileID: 8300000, guid: 70c3a9fa59bea044891f4b40c23b715e, type: 3}
+  - {fileID: 8300000, guid: 101f361e648cf6a41ad8efb50a0dec66, type: 3}
+  - {fileID: 8300000, guid: 68c4ccd1165f1a742800ff7c4e1af721, type: 3}
 --- !u!114 &114395926669411050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -277,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb30afc140d9024ea8fe6a7fe269cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initFade: 1
+  initFade: 0
   initFadeDuration: 2
   audioSource:
   - {fileID: 82264377190625180}
