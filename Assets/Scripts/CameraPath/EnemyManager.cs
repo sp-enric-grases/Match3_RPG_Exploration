@@ -9,6 +9,7 @@ namespace SocialPoint.Tools
         public GameObject loot;
         public int minLootAmount = 1;
         public int maxLootAmount = 5;
+        public int numberOfHits = 3;
 
         private float threshold = 0.2f;
 
@@ -32,6 +33,13 @@ namespace SocialPoint.Tools
                 newLoot.GetComponent<Loot>().SettingConstraintProperties();
                 newLoot.transform.parent = null;
             }
+        }
+
+        public void Shake()
+        {
+            AudioManager.Instance.PlayEffect(AudiosData.SLASH);
+            anim.SetTrigger("shake");
+            numberOfHits--;
         }
 
         public void Die()

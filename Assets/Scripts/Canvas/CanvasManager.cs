@@ -185,18 +185,21 @@ namespace SocialPoint.Tools
                 StartCoroutine(ShowEnemy(enemiesList[i], i * TIME_BETWEEN_ENEMIES, i == numberOfEnemies - 1 ? true : false));
         }
 
-        public void DieEnemy(int enemy)
+        public void HitEnemy(int enemy)
         {
-            AudioManager.Instance.PlayEffect(AudiosData.SLASH);
-
             if (!enemiesAreReady) return;
-
             
             if (enemies[enemy] != null)
             {
-                enemies[enemy].Die();
-                enemies[enemy] = null;
-                numberOfEnemies--;
+                if (enemies[enemy].numberOfHits > 0)
+                    enemies[enemy].Shake();
+                else
+                {
+                    enemies[enemy].Die();
+                    enemies[enemy] = null;
+                    numberOfEnemies--;
+                }
+
             }
 
             if (numberOfEnemies == 0)
