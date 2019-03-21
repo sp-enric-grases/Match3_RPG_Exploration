@@ -37,7 +37,7 @@ namespace SocialPoint.Tools
 
         public void Shake()
         {
-            AudioManager.Instance.PlayEffect(AudiosData.SLASH);
+            AudioManager.Instance.PlayEffect(AudiosData.SLASH, 0.3f);
             anim.SetTrigger("shake");
             numberOfHits--;
         }
@@ -49,7 +49,7 @@ namespace SocialPoint.Tools
             foreach (var item in loots)
                 item.SetActive(true);
 
-            AudioManager.Instance.PlayEffect(AudiosData.DEATH);
+            AudioManager.Instance.PlayEffect(AudiosData.DEATH, 0.3f);
         }
 
         public void Dissapear()
