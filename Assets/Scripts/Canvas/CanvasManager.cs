@@ -234,6 +234,7 @@ namespace SocialPoint.Tools
 
         public void RestartDemo()
         {
+            GameState.startFromBegining = true;
             UnityEngine.SceneManagement.SceneManager.LoadScene("Env_Forest");
         }
     }

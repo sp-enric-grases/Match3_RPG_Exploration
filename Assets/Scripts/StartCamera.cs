@@ -15,6 +15,9 @@ namespace SocialPoint.Tools
         {
             AudioManager.Instance.PlayMusic(clip);
             AudioManager.Instance.ChangeMusicWithFade(clip, 2);
+
+            if (!GameState.startFromBegining) Destroy(this);
+
             rotation = transform.rotation;
 
             if (arrow != null)
@@ -35,6 +38,7 @@ namespace SocialPoint.Tools
                     if (arrow != null)
                         arrow.SetActive(true);
 
+                    GameState.startFromBegining = false;
                     Destroy(this);
                 }
             }
