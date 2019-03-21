@@ -12847,12 +12847,12 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0.009160546
-      outSlope: 0.009160546
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.2036638
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 1
@@ -28225,7 +28225,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   finalRotation: {x: 0, y: 60, z: 0}
-  timeToFinalRelocation: 2
+  timeToFinalRelocation: 1.5
   curveFinalRelocation:
     serializedVersion: 2
     m_Curve:
@@ -28254,9 +28254,9 @@ MonoBehaviour:
   follow: 1
   refFollow: 1
   enemies:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2129280679}
+  - {fileID: 305636321}
+  - {fileID: 521785660}
   door: {fileID: 0}
   inf: []
 --- !u!1001 &917634112
@@ -44415,7 +44415,12 @@ Prefab:
     - target: {fileID: 114274574494778582, guid: 62984973388c91b4289ae6b129d5faba,
         type: 2}
       propertyPath: cooldown
-      value: 0.2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114937339786411198, guid: 62984973388c91b4289ae6b129d5faba,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62984973388c91b4289ae6b129d5faba, type: 2}
