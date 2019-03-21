@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace SocialPoint.Tools
@@ -158,14 +159,19 @@ namespace SocialPoint.Tools
 
             canvas.ShowTiles();
             canvas.PopulateEnemies(enemies, triggerContainer, door);
+
+            StartCoroutine(SetCameraFinalPosition());
+
             SetCameraFinalPosition();
             Destroy(reference);
             Destroy(finalReference);
             Destroy(cam.GetComponent<InfluencerDetection>());
         }
 
-        private void SetCameraFinalPosition()
+        IEnumerator SetCameraFinalPosition()
         {
+            yield return new WaitForSeconds(1);
+
             Quaternion rot = cam.transform.rotation;
             CameraRotation rotation = cam.GetComponent<CameraRotation>();
 
