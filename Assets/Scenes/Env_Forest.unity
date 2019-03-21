@@ -5218,6 +5218,27 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114705225902939382, guid: 2021fc6fee9c9f04591ea909ad771aa3,
+        type: 2}
+      propertyPath: lootRoot
+      value: 
+      objectReference: {fileID: 1274979805}
+    - target: {fileID: 114705225902939382, guid: 2021fc6fee9c9f04591ea909ad771aa3,
+        type: 2}
+      propertyPath: loot
+      value: 
+      objectReference: {fileID: 1571763763765094, guid: 89cb9e5d8f5f6de47b625d18e223f3ff,
+        type: 2}
+    - target: {fileID: 114705225902939382, guid: 2021fc6fee9c9f04591ea909ad771aa3,
+        type: 2}
+      propertyPath: strength.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114705225902939382, guid: 2021fc6fee9c9f04591ea909ad771aa3,
+        type: 2}
+      propertyPath: threshold
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2021fc6fee9c9f04591ea909ad771aa3, type: 2}
   m_IsPrefabAsset: 0
@@ -27226,6 +27247,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: 67e35a18b627b9140ac944428c70100a,
     type: 3}
   m_PrefabInternal: {fileID: 868105895}
+--- !u!1 &874721033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1177366348163046, guid: 2021fc6fee9c9f04591ea909ad771aa3,
+    type: 2}
+  m_PrefabInternal: {fileID: 904947434}
 --- !u!1001 &877706395
 Prefab:
   m_ObjectHideFlags: 0
@@ -27789,6 +27815,32 @@ Prefab:
         type: 2}
       propertyPath: m_ScaleInLightmap
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114705225902939382, guid: 2021fc6fee9c9f04591ea909ad771aa3,
+        type: 2}
+      propertyPath: lootRoot
+      value: 
+      objectReference: {fileID: 874721033}
+    - target: {fileID: 114705225902939382, guid: 2021fc6fee9c9f04591ea909ad771aa3,
+        type: 2}
+      propertyPath: loot
+      value: 
+      objectReference: {fileID: 1571763763765094, guid: 89cb9e5d8f5f6de47b625d18e223f3ff,
+        type: 2}
+    - target: {fileID: 114705225902939382, guid: 2021fc6fee9c9f04591ea909ad771aa3,
+        type: 2}
+      propertyPath: threshold
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114705225902939382, guid: 2021fc6fee9c9f04591ea909ad771aa3,
+        type: 2}
+      propertyPath: strength.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 114705225902939382, guid: 2021fc6fee9c9f04591ea909ad771aa3,
+        type: 2}
+      propertyPath: strength.y
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2021fc6fee9c9f04591ea909ad771aa3, type: 2}
@@ -33657,6 +33709,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d8311ed15ed08c942ac20da1849517ae,
     type: 3}
   m_PrefabInternal: {fileID: 1273220734}
+--- !u!1 &1274979805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1177366348163046, guid: 2021fc6fee9c9f04591ea909ad771aa3,
+    type: 2}
+  m_PrefabInternal: {fileID: 354285437}
 --- !u!4 &1277675082 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 3211ad0daf241e74eb23c389c14c2913,
@@ -36751,6 +36808,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4321232782549920, guid: 2021fc6fee9c9f04591ea909ad771aa3, type: 2}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114705225902939382, guid: 2021fc6fee9c9f04591ea909ad771aa3,
+        type: 2}
+      propertyPath: loot
+      value: 
+      objectReference: {fileID: 1571763763765094, guid: 89cb9e5d8f5f6de47b625d18e223f3ff,
+        type: 2}
+    - target: {fileID: 114705225902939382, guid: 2021fc6fee9c9f04591ea909ad771aa3,
+        type: 2}
+      propertyPath: lootRoot
+      value: 
+      objectReference: {fileID: 1920948422}
+    - target: {fileID: 114705225902939382, guid: 2021fc6fee9c9f04591ea909ad771aa3,
+        type: 2}
+      propertyPath: strength.x
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 114705225902939382, guid: 2021fc6fee9c9f04591ea909ad771aa3,
+        type: 2}
+      propertyPath: threshold
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -57364,6 +57442,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3211ad0daf241e74eb23c389c14c2913, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1 &1920948422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1177366348163046, guid: 2021fc6fee9c9f04591ea909ad771aa3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1463831188}
 --- !u!1001 &1921127398
 Prefab:
   m_ObjectHideFlags: 0
