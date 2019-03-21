@@ -7,6 +7,8 @@ ModelImporter:
     400000: //RootNode
     2100000: 24 - Default
     2100002: 01 - Default
+    2100004: Path
+    2100006: Grass
     2300000: //RootNode
     3300000: //RootNode
     4300000: Prop_Path
