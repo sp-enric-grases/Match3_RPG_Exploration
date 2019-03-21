@@ -32,7 +32,7 @@ namespace SocialPoint.Tools
             newCrate.transform.localScale = Vector3.one;
             newCrate.transform.parent = null;
 
-            AudioManager.Instance.PlayEffect(AudiosData.CRATE, 0.3f);
+            AudioManager.Instance.PlayEffect(AudiosData.CRATE);
         }
     }
 }

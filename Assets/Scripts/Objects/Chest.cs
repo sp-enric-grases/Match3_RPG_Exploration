@@ -28,7 +28,7 @@ namespace SocialPoint.Tools
             if (cm != null) cm.ShowInventary();
 
             anim.SetBool("openChest", true);
-            AudioManager.Instance.PlayEffect(AudiosData.CHEST, 0.3f);
+            AudioManager.Instance.PlayEffect(AudiosData.CHEST);
             //AudioManager.Instance.PlayEffect(AudiosData.TREASURE);
             //countLoot++;
         }

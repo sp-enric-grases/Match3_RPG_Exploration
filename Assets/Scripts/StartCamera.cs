@@ -9,14 +9,17 @@ namespace SocialPoint.Tools
         public GameObject arrow;
         public GameObject sideArrows;
         private Quaternion rotation;
-        
+
 
         private void Start()
         {
-            AudioManager.Instance.PlayMusic(clip);
-            AudioManager.Instance.ChangeMusicWithFade(clip, 2);
+            AudioManager.Instance.ChangeMusicWithFade(clip, 2, 0.3f);
 
-            if (!GameState.startFromBegining) Destroy(this);
+            if (!GameState.startFromBegining)
+            { 
+                Destroy(this);
+                //AudioManager.Instance.ChangeMusicWithFade(clip, 2, 0.7f);
+            }
 
             rotation = transform.rotation;
 

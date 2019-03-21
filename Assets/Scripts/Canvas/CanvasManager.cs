@@ -234,6 +234,7 @@ namespace SocialPoint.Tools
 
         public void RestartDemo()
         {
+            AudioManager.Instance.ChangeMusicWithFade(AudiosData.MUSIC, 1, 0.7f);
             GameState.startFromBegining = true;
             UnityEngine.SceneManagement.SceneManager.LoadScene("Env_Forest");
         }

@@ -119,7 +119,7 @@ namespace SocialPoint.Tools
                 default: clip = AudiosData.GENERIC; break;
             }
 
-            AudioManager.Instance.PlayEffect(clip, 0.3f);
+            AudioManager.Instance.PlayEffect(clip);
         }
 
         private void Update()
