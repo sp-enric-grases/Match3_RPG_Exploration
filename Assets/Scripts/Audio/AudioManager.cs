@@ -47,6 +47,13 @@ namespace SocialPoint.Tools
             FadeClip();
         }
 
+        #region GENERICS
+        public void SetVolume(int source, float volume)
+        {
+            audioSource[(int)Channel.Music].volume = volume;
+        }
+        #endregion
+
         #region MUSIC
         public void PlayMusic()
         {
