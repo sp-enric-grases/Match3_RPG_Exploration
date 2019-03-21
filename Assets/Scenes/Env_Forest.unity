@@ -4510,6 +4510,7 @@ MonoBehaviour:
   loot: {fileID: 1571763763765094, guid: 89cb9e5d8f5f6de47b625d18e223f3ff, type: 2}
   minLootAmount: 3
   maxLootAmount: 6
+  numberOfHits: 1
 --- !u!95 &305636322
 Animator:
   serializedVersion: 3
@@ -5955,6 +5956,21 @@ Prefab:
       propertyPath: fadeOut
       value: 
       objectReference: {fileID: 450649271}
+    - target: {fileID: 114004003654475964, guid: 9e622c4c0f29c5141b75737bc303463a,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HitEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 114388208456551472, guid: 9e622c4c0f29c5141b75737bc303463a,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HitEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 114148315723984282, guid: 9e622c4c0f29c5141b75737bc303463a,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HitEnemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e622c4c0f29c5141b75737bc303463a, type: 2}
   m_IsPrefabAsset: 0
@@ -11878,6 +11894,7 @@ MonoBehaviour:
   loot: {fileID: 1571763763765094, guid: 89cb9e5d8f5f6de47b625d18e223f3ff, type: 2}
   minLootAmount: 3
   maxLootAmount: 6
+  numberOfHits: 1
 --- !u!1001 &469787927
 Prefab:
   m_ObjectHideFlags: 0
@@ -12938,6 +12955,7 @@ MonoBehaviour:
   loot: {fileID: 1571763763765094, guid: 89cb9e5d8f5f6de47b625d18e223f3ff, type: 2}
   minLootAmount: 3
   maxLootAmount: 6
+  numberOfHits: 1
 --- !u!95 &521785661
 Animator:
   serializedVersion: 3
@@ -44627,6 +44645,7 @@ MonoBehaviour:
   loot: {fileID: 1571763763765094, guid: 89cb9e5d8f5f6de47b625d18e223f3ff, type: 2}
   minLootAmount: 1
   maxLootAmount: 5
+  numberOfHits: 3
 --- !u!1001 &1658350172
 Prefab:
   m_ObjectHideFlags: 0
@@ -57095,6 +57114,7 @@ MonoBehaviour:
   loot: {fileID: 1571763763765094, guid: 89cb9e5d8f5f6de47b625d18e223f3ff, type: 2}
   minLootAmount: 4
   maxLootAmount: 8
+  numberOfHits: 2
 --- !u!1001 &1919336548
 Prefab:
   m_ObjectHideFlags: 0
@@ -57898,6 +57918,7 @@ MonoBehaviour:
   loot: {fileID: 1571763763765094, guid: 89cb9e5d8f5f6de47b625d18e223f3ff, type: 2}
   minLootAmount: 3
   maxLootAmount: 6
+  numberOfHits: 1
 --- !u!4 &1961878036
 Transform:
   m_ObjectHideFlags: 0
@@ -59745,6 +59766,7 @@ MonoBehaviour:
   loot: {fileID: 1571763763765094, guid: 89cb9e5d8f5f6de47b625d18e223f3ff, type: 2}
   minLootAmount: 4
   maxLootAmount: 8
+  numberOfHits: 2
 --- !u!95 &2129280680
 Animator:
   serializedVersion: 3
