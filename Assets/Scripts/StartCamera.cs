@@ -13,7 +13,7 @@ namespace SocialPoint.Tools
 
         private void Start()
         {
-            AudioManager.Instance.ChangeMusicWithFade(clip, 2, 0.3f);
+            AudioManager.Instance.ChangeMusicWithFade(clip, 2, 0.2f);
 
             if (!GameState.startFromBegining)
             { 

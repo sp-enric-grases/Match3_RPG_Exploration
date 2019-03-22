@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip:
-  - {fileID: 8300000, guid: fb236b8e943dc4e73b7b12192f51908a, type: 3}
+  - {fileID: 8300000, guid: b33f26435e1724bf5a7ddf08815534d1, type: 3}
   - {fileID: 8300000, guid: 00afeef1a828547c285dd9ef16c173c8, type: 3}
   - {fileID: 8300000, guid: 387b15fc897315f4dbdea49d1f3651f7, type: 3}
   - {fileID: 8300000, guid: 3205111cbcc828f4b974f632b89d887e, type: 3}
