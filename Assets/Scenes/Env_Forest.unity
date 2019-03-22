@@ -3298,6 +3298,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 114038881464586030, guid: 5720b12501efdf44a8cc1ce0ec1ee535,
+        type: 2}
+      propertyPath: clip.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: b33f26435e1724bf5a7ddf08815534d1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5720b12501efdf44a8cc1ce0ec1ee535, type: 2}
   m_IsPrefabAsset: 0
@@ -5983,6 +5988,10 @@ Prefab:
     - target: {fileID: 114106674174741752, guid: 9e622c4c0f29c5141b75737bc303463a,
         type: 2}
       propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155807839784224, guid: 9e622c4c0f29c5141b75737bc303463a, type: 2}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -44478,7 +44487,7 @@ Prefab:
         type: 2}
       propertyPath: clip
       value: 
-      objectReference: {fileID: 8300000, guid: e127432c234ffd44988a5927d27fd5e9, type: 3}
+      objectReference: {fileID: 8300000, guid: b33f26435e1724bf5a7ddf08815534d1, type: 3}
     - target: {fileID: 114274574494778582, guid: 62984973388c91b4289ae6b129d5faba,
         type: 2}
       propertyPath: cooldown
@@ -44493,6 +44502,11 @@ Prefab:
         type: 2}
       propertyPath: invertDirection
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20592617736517330, guid: 62984973388c91b4289ae6b129d5faba,
+        type: 2}
+      propertyPath: m_projectionMatrixMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62984973388c91b4289ae6b129d5faba, type: 2}
@@ -58053,6 +58067,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1177366348163046, guid: 2021fc6fee9c9f04591ea909ad771aa3,
     type: 2}
   m_PrefabInternal: {fileID: 137832055}
+--- !u!4 &1959742169 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4629201220385570, guid: 2021fc6fee9c9f04591ea909ad771aa3,
+    type: 2}
+  m_PrefabInternal: {fileID: 137832055}
 --- !u!1 &1961878034
 GameObject:
   m_ObjectHideFlags: 0
@@ -59833,6 +59852,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path1: {fileID: 519825868}
   path2: {fileID: 910817955}
+--- !u!114 &2120996937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2120996928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0a2a21ec875c646b69a07cb293b9d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToRelocation: 10
+  angleThreshold: 10
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  pointsOfInterest:
+  - {fileID: 1959742169}
 --- !u!1001 &2123171597
 Prefab:
   m_ObjectHideFlags: 0
