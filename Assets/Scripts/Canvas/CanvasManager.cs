@@ -26,6 +26,7 @@ namespace SocialPoint.Tools
         private bool enemiesAreReady = false;
         private List<GameObject> trigger;
         private Animator door;
+        private LootManager lm;
 
         [HideInInspector] public int numberOfEnemies;
         [HideInInspector] public int numberOfLoot;
@@ -36,6 +37,7 @@ namespace SocialPoint.Tools
         {
             cam.gameObject.GetComponent<CameraEvents>().CameraEventEndForest += ShowEndCanvas;
             cam.gameObject.GetComponent<CameraEvents>().CameraEventDungeon += GoToDungeons;
+            lm = GetComponent<LootManager>();
             anim = GetComponent<Animator>();
 
             SetCanvasFades();
@@ -78,7 +80,6 @@ namespace SocialPoint.Tools
             if (numberOfEnemies > 0) return;
 
             int layerMask = 1 << LayerMask.NameToLayer("InteractableObject");
-
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
@@ -89,6 +90,7 @@ namespace SocialPoint.Tools
                 switch (hit.collider.tag)
                 {
                     case "Loot":
+                        lm.StartCounting(hit.collider.gameObject.GetComponent<Loot>(), false);
                         CreateCanvasLoot(lootPosition, hit.collider.gameObject.GetComponent<Loot>().loot);
                         DestroyImmediate(hit.collider.gameObject);
                         break;
@@ -200,7 +202,6 @@ namespace SocialPoint.Tools
                     enemies[enemy] = null;
                     numberOfEnemies--;
                 }
-
             }
 
             if (numberOfEnemies == 0)

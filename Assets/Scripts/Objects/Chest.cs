@@ -13,7 +13,6 @@ namespace SocialPoint.Tools
             anim = GetComponent<Animator>();
             numLoot = Random.Range(minLoot, maxLoot + 1);
             countLoot = 0;
-
         }
 
         private void FixedUpdate()
@@ -64,7 +63,7 @@ namespace SocialPoint.Tools
 
             chestIsOpen = true;
             OpenChest();
-            CreateLoot();
+            CreateLoot(lootManager);
             Destroy(GetComponent<SphereCollider>());
         }
 

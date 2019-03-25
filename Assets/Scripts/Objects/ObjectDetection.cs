@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SocialPoint.Tools
 {
@@ -11,13 +9,14 @@ namespace SocialPoint.Tools
         public int maxLoot = 5;
         public GameObject lootRoot;
         public GameObject loot;
+        public LootManager lootManager;
         public Vector2 strength = new Vector2(100, 100);
         public float threshold = 0.5f;
 
         protected int countLoot;
         protected int numLoot;
 
-        protected void CreateLoot()
+        protected void CreateLoot(LootManager lm)
         {
             for (int i = 0; i < numLoot; i++)
             {
@@ -28,6 +27,8 @@ namespace SocialPoint.Tools
 
                 Vector3 dir = newLoot.transform.position - Camera.main.transform.position;
                 newLoot.GetComponent<Rigidbody>().AddForce(Vector3.up * strength.y - dir * strength.x);
+
+                lootManager.StartCounting(newLoot.GetComponent<Loot>(), true);
             }
         }
     }

@@ -5,6 +5,7 @@ namespace SocialPoint.Tools
 {
     public class EnemyManager : MonoBehaviour
     {
+        public LootManager lm;
         public GameObject lootRoot;
         public GameObject loot;
         public int minLootAmount = 1;
@@ -32,6 +33,8 @@ namespace SocialPoint.Tools
                 loots.Add(newLoot);
                 newLoot.GetComponent<Loot>().SettingConstraintProperties();
                 newLoot.transform.parent = null;
+
+                lm.StartCounting(newLoot.GetComponent<Loot>(), true);
             }
         }
 

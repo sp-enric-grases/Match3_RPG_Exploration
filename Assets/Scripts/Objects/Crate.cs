@@ -20,7 +20,7 @@ namespace SocialPoint.Tools
         public void CreateLootCrate()
         {
             CreateBrokenCrate();
-            CreateLoot();
+            CreateLoot(lootManager);
             Destroy(gameObject);
         }
 
