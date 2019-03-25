@@ -19,16 +19,25 @@ namespace SocialPoint.Tools
         public bool invertDirection = false;
         public bool inertia = true;
         public float decelerationRate = 1f;
+        public float decelerationEase = 1f;
 
         public Text a, b;
 
         private float rotX = 0.0f;
         private float rotY = 0.0f;
         private float velRecover = 0f;
+        private float decEasy;
+
+        private Vector3 anglesRecover = Vector3.zero;
+
+        Vector3 oldPosition = Vector3.zero;
+        Vector3 newPosition = Vector3.zero;
+        Vector3 diff = Vector3.zero;
 
         void Start()
         {
             SetInitRotations(transform.eulerAngles);
+            oldPosition = transform.eulerAngles;
         }
 
         public void SetInitRotations(Vector3 rotation)
@@ -53,23 +62,47 @@ namespace SocialPoint.Tools
         {
             #if UNITY_STANDALONE || UNITY_EDITOR
             GetInput_StandAlone();
-            #elif UNITY_IOS || UNITY_ANDROID
+#elif UNITY_IOS || UNITY_ANDROID
             GetInput_Devive();
-            #endif
+#endif
+
             transform.eulerAngles = new Vector3(-rotY, rotX, 0.0f);
+
+            //transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(-rotY, rotX, 0.0f), Time.deltaTime / 100);
+
+            //newPosition = transform.eulerAngles;
+            
+
+            //if (newPosition != oldPosition)
+            //{
+            //    diff = newPosition - oldPosition;
+            //    oldPosition = newPosition;
+            //}
+
+            //transform.eulerAngles += diff * decEasy;
+
         }
 
         private void GetInput_StandAlone()
         {
+
+
             if (Input.GetMouseButton(0))
             {
                 rotX += Input.GetAxis("Mouse X") * (invertDirection ? 1 : -1);
                 rotY += Input.GetAxis("Mouse Y") * (invertDirection ? 1 : -1);
 
+                //decEasy = decelerationEase;
+
                 GetLimits();
             }
-            else
-                RecoverPosition();
+            //else
+            //{
+            //    RecoverPosition();
+            //    decEasy -= Time.deltaTime;
+            //    decEasy = Mathf.Clamp01(decEasy);
+            //    Debug.Log(decEasy);
+            //}
         }
 
         private void GetInput_Devive()
