@@ -65,44 +65,40 @@ namespace SocialPoint.Tools
 #elif UNITY_IOS || UNITY_ANDROID
             GetInput_Devive();
 #endif
-
-            transform.eulerAngles = new Vector3(-rotY, rotX, 0.0f);
-
             //transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(-rotY, rotX, 0.0f), Time.deltaTime / 100);
-
-            //newPosition = transform.eulerAngles;
-            
-
-            //if (newPosition != oldPosition)
-            //{
-            //    diff = newPosition - oldPosition;
-            //    oldPosition = newPosition;
-            //}
-
-            //transform.eulerAngles += diff * decEasy;
-
         }
 
         private void GetInput_StandAlone()
         {
-
-
             if (Input.GetMouseButton(0))
             {
                 rotX += Input.GetAxis("Mouse X") * (invertDirection ? 1 : -1);
                 rotY += Input.GetAxis("Mouse Y") * (invertDirection ? 1 : -1);
 
-                //decEasy = decelerationEase;
+                decEasy = decelerationEase;
+                newPosition = transform.eulerAngles;
+
+                if ((newPosition - oldPosition).sqrMagnitude > 0.1f)
+                {
+                    diff = newPosition - oldPosition;
+                    oldPosition = newPosition;
+                }
+
+                transform.eulerAngles = new Vector3(-rotY, rotX, 0.0f);
 
                 GetLimits();
             }
-            //else
-            //{
-            //    RecoverPosition();
-            //    decEasy -= Time.deltaTime;
-            //    decEasy = Mathf.Clamp01(decEasy);
-            //    Debug.Log(decEasy);
-            //}
+            else
+            {
+                
+                decEasy -= Time.deltaTime;
+                decEasy = Mathf.Clamp01(decEasy);
+
+                if (diff.sqrMagnitude > 0.1f)
+                    transform.eulerAngles += diff * decEasy;
+
+                RecoverPosition();
+            }
         }
 
         private void GetInput_Devive()
@@ -112,10 +108,10 @@ namespace SocialPoint.Tools
                 rotX += Input.GetTouch(0).deltaPosition.x / GetComponent<Camera>().pixelWidth * Time.deltaTime * sensibility * SENSIBILITY * (invertDirection ? 1 : -1);
                 rotY += Input.GetTouch(0).deltaPosition.y / GetComponent<Camera>().pixelHeight * Time.deltaTime * sensibility * SENSIBILITY * (invertDirection ? 1 : -1);
 
-                GetLimits();
+                //GetLimits();
             }
-            else
-                RecoverPosition();
+            //else
+            //    RecoverPosition();
         }
 
         private void GetLimits()
