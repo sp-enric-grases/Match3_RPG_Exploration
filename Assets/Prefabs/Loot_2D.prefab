@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114406641376398848}
   - component: {fileID: 199864715447408054}
   - component: {fileID: 222358190898153194}
+  - component: {fileID: 223030349416437774}
   m_Layer: 0
   m_Name: FX_LightProjectile_TL_A_Core
   m_TagString: Untagged
@@ -42,6 +43,7 @@ GameObject:
   - component: {fileID: 114034399086904264}
   - component: {fileID: 199970266580926536}
   - component: {fileID: 222064214834035228}
+  - component: {fileID: 223078614260313220}
   m_Layer: 0
   m_Name: FX_LightProjectile_TL_A_Trail
   m_TagString: Untagged
@@ -60,7 +62,7 @@ GameObject:
   - component: {fileID: 222618161754124784}
   - component: {fileID: 114409069647652152}
   - component: {fileID: 114964730226994376}
-  - component: {fileID: 223172832960483582}
+  - component: {fileID: 223696506576998902}
   m_Layer: 5
   m_Name: Loot_2D
   m_TagString: Untagged
@@ -80,6 +82,7 @@ GameObject:
   - component: {fileID: 198419125172314474}
   - component: {fileID: 114368972279461084}
   - component: {fileID: 222997692013201468}
+  - component: {fileID: 223601296628703482}
   m_Layer: 0
   m_Name: FX_LightProjectile_TL_A
   m_TagString: Untagged
@@ -99,8 +102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 5b4234b49abb30f40aef720b24d4fc7b, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 0.078431375}
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -124,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -147,8 +150,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 72166c3329906ba4cb3644dcabca6439, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 0.49803922}
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -505,7 +508,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 0.25882354}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.0627451}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -14045,7 +14048,67 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1992385023604858}
   m_CullTransparentMesh: 0
---- !u!223 &223172832960483582
+--- !u!223 &223030349416437774
+Canvas:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1299797370270246}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!223 &223078614260313220
+Canvas:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1407834409355796}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!223 &223601296628703482
+Canvas:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1992385023604858}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!223 &223696506576998902
 Canvas:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14061,9 +14124,9 @@ Canvas:
   m_OverrideSorting: 1
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &224102631637766710
 RectTransform:
@@ -14073,7 +14136,7 @@ RectTransform:
   m_GameObject: {fileID: 1478891618106794}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.34661835, y: 0.34661835, z: 0.34661835}
+  m_LocalScale: {x: 0.34661838, y: 0.34661838, z: 0.34661838}
   m_Children:
   - {fileID: 224152738144128222}
   m_Father: {fileID: 0}
@@ -14081,7 +14144,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 196.87923, y: 215.94324}
+  m_AnchoredPosition: {x: 196.87923, y: 215.94322}
   m_SizeDelta: {x: 128, y: 129}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224152738144128222

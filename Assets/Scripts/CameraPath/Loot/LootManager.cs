@@ -10,7 +10,6 @@ namespace SocialPoint.Tools
         public float autoLootTime = 2;
         public float thresholdTime = 0.3f;
         public bool startCounting = false;
-        public bool userIsActive = false;
 
         public List<Loot> lootList = new List<Loot>();
 
@@ -25,8 +24,6 @@ namespace SocialPoint.Tools
 
         void Update()
         {
-            if (userIsActive) return;
-
             if (cm.numberOfEnemies > 0) return;
 
             if (startCounting)
@@ -48,7 +45,6 @@ namespace SocialPoint.Tools
             else
                 lootList.Remove(loot);
 
-            userIsActive = false;
             startCounting = true;
             lootCounter = autoLootTime;
         }
@@ -66,7 +62,7 @@ namespace SocialPoint.Tools
             Destroy(loot.gameObject);
             lootList.Remove(loot);
 
-            if (!userIsActive && lootList.Count > 0)
+            if (lootList.Count > 0)
                 StartCoroutine(AutoLoot());
         }
     }

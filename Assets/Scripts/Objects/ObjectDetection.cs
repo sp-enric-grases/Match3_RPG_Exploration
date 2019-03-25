@@ -11,7 +11,7 @@ namespace SocialPoint.Tools
         public GameObject loot;
         public LootManager lootManager;
         public Vector2 strength = new Vector2(100, 100);
-        public float threshold = 0.5f;
+        public float distancethreshold = 0.5f;
 
         protected int countLoot;
         protected int numLoot;
@@ -21,7 +21,7 @@ namespace SocialPoint.Tools
             for (int i = 0; i < numLoot; i++)
             {
                 GameObject newLoot = Instantiate(loot, lootRoot.transform.position, Quaternion.identity);
-                newLoot.transform.position += new Vector3(Random.Range(-threshold, threshold), Random.Range(-threshold, threshold), Random.Range(-threshold, threshold));
+                newLoot.transform.position += new Vector3(Random.Range(-distancethreshold, distancethreshold), Random.Range(-distancethreshold, distancethreshold), Random.Range(-distancethreshold, distancethreshold));
                 newLoot.GetComponent<Loot>().SettingConstraintProperties();
                 newLoot.SetActive(true);
 
