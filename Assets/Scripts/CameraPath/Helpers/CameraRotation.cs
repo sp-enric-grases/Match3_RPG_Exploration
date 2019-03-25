@@ -62,10 +62,11 @@ namespace SocialPoint.Tools
         {
             #if UNITY_STANDALONE || UNITY_EDITOR
             GetInput_StandAlone();
-#elif UNITY_IOS || UNITY_ANDROID
+            #elif UNITY_IOS || UNITY_ANDROID
             GetInput_Devive();
-#endif
-            //transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(-rotY, rotX, 0.0f), Time.deltaTime / 100);
+            #endif
+
+            transform.eulerAngles = new Vector3(-rotY, rotX, 0.0f);
         }
 
         private void GetInput_StandAlone()
@@ -75,29 +76,37 @@ namespace SocialPoint.Tools
                 rotX += Input.GetAxis("Mouse X") * (invertDirection ? 1 : -1);
                 rotY += Input.GetAxis("Mouse Y") * (invertDirection ? 1 : -1);
 
-                decEasy = decelerationEase;
-                newPosition = transform.eulerAngles;
+                //decEasy = decelerationEase;
+                //newPosition = transform.eulerAngles;
+                
 
-                if ((newPosition - oldPosition).sqrMagnitude > 0.1f)
-                {
-                    Debug.Log((newPosition - oldPosition).sqrMagnitude);
+                //if (magnitude > 0.1f)// && magnitude < 1)
+                //if (newPosition != oldPosition)
+                //{
+                //    Debug.Log("Old: " + oldPosition + " | New: " + newPosition);
 
-                    diff = newPosition - oldPosition;
-                    oldPosition = newPosition;
-                }
+                //    float magnitude = (newPosition - oldPosition).sqrMagnitude;
+                //    Debug.Log(magnitude);
 
-                transform.eulerAngles = new Vector3(-rotY, rotX, 0.0f);
+                //    //if (magnitude < 1)
+                //    {
+                //        diff = newPosition - oldPosition;
+                //        oldPosition = newPosition;
+                //    }
+                //}
+
+                //transform.eulerAngles = new Vector3(-rotY, rotX, 0.0f);
 
                 GetLimits();
             }
             else
             {
                 
-                decEasy -= Time.deltaTime;
-                decEasy = Mathf.Clamp01(decEasy);
+                //decEasy -= Time.deltaTime;
+                //decEasy = Mathf.Clamp01(decEasy);
 
-                if (diff.sqrMagnitude > 0.1f)
-                    transform.eulerAngles += diff * decEasy;
+                //if (diff.sqrMagnitude > 0.1f)
+                    //transform.eulerAngles += diff * decEasy;
 
                 RecoverPosition();
             }
@@ -110,31 +119,11 @@ namespace SocialPoint.Tools
                 rotX += Input.GetTouch(0).deltaPosition.x / GetComponent<Camera>().pixelWidth * Time.deltaTime * sensibility * SENSIBILITY * (invertDirection ? 1 : -1);
                 rotY += Input.GetTouch(0).deltaPosition.y / GetComponent<Camera>().pixelHeight * Time.deltaTime * sensibility * SENSIBILITY * (invertDirection ? 1 : -1);
 
-                decEasy = decelerationEase;
-                newPosition = transform.eulerAngles;
-
-                if ((newPosition - oldPosition).sqrMagnitude > 0.1f)
-                {
-                    Debug.Log((newPosition - oldPosition).sqrMagnitude);
-
-                    diff = newPosition - oldPosition;
-                    oldPosition = newPosition;
-                }
-
-                transform.eulerAngles = new Vector3(-rotY, rotX, 0.0f);
-
-
-                //GetLimits();
+                GetLimits();
             }
             else
             {
-                decEasy -= Time.deltaTime;
-                decEasy = Mathf.Clamp01(decEasy);
-
-                if (diff.sqrMagnitude > 0.1f)
-                    transform.eulerAngles += diff * decEasy;
-
-                //    RecoverPosition();
+                RecoverPosition();
             }
         }
 
