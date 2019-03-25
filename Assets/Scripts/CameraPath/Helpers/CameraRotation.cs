@@ -80,6 +80,8 @@ namespace SocialPoint.Tools
 
                 if ((newPosition - oldPosition).sqrMagnitude > 0.1f)
                 {
+                    Debug.Log((newPosition - oldPosition).sqrMagnitude);
+
                     diff = newPosition - oldPosition;
                     oldPosition = newPosition;
                 }
@@ -108,10 +110,32 @@ namespace SocialPoint.Tools
                 rotX += Input.GetTouch(0).deltaPosition.x / GetComponent<Camera>().pixelWidth * Time.deltaTime * sensibility * SENSIBILITY * (invertDirection ? 1 : -1);
                 rotY += Input.GetTouch(0).deltaPosition.y / GetComponent<Camera>().pixelHeight * Time.deltaTime * sensibility * SENSIBILITY * (invertDirection ? 1 : -1);
 
+                decEasy = decelerationEase;
+                newPosition = transform.eulerAngles;
+
+                if ((newPosition - oldPosition).sqrMagnitude > 0.1f)
+                {
+                    Debug.Log((newPosition - oldPosition).sqrMagnitude);
+
+                    diff = newPosition - oldPosition;
+                    oldPosition = newPosition;
+                }
+
+                transform.eulerAngles = new Vector3(-rotY, rotX, 0.0f);
+
+
                 //GetLimits();
             }
-            //else
-            //    RecoverPosition();
+            else
+            {
+                decEasy -= Time.deltaTime;
+                decEasy = Mathf.Clamp01(decEasy);
+
+                if (diff.sqrMagnitude > 0.1f)
+                    transform.eulerAngles += diff * decEasy;
+
+                //    RecoverPosition();
+            }
         }
 
         private void GetLimits()
