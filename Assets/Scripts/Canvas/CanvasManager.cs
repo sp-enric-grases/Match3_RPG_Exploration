@@ -145,6 +145,10 @@ namespace SocialPoint.Tools
             anim.SetBool("showTiles", false);
             anim.SetBool("showInv", true);
             cam.GetComponent<CameraRotation>().enabled = true;
+            Debug.Log("Current Y: " + cam.transform.eulerAngles.y);
+            Debug.Log("Limits: " + cam.GetComponent<CameraRotation>().limitX.x + "," + cam.GetComponent<CameraRotation>().limitX.y);
+            Debug.Log("Offset: " + cam.GetComponent<CameraRotation>().offsetRotX);
+
         }
 
         public void HideInventary()
@@ -207,6 +211,7 @@ namespace SocialPoint.Tools
             if (numberOfEnemies == 0)
             {
                 ShowInventary();
+
                 foreach (var item in trigger)
                     item.SetActive(true);
 
