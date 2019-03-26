@@ -13072,7 +13072,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  offsetCompensation: -30
+  cameraLimits: {x: 30, y: 180}
+  offsetCompensation: 60
   follow: 1
   refFollow: 1
   enemies:
@@ -18575,6 +18576,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  cameraLimits: {x: 0, y: 180}
   offsetCompensation: 0.5
   follow: 1
   refFollow: 1
@@ -28657,7 +28659,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  offsetCompensation: 60
+  cameraLimits: {x: 0, y: 180}
+  offsetCompensation: 150
   follow: 1
   refFollow: 1
   enemies:
@@ -34595,7 +34598,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  offsetCompensation: 30
+  cameraLimits: {x: 0, y: 180}
+  offsetCompensation: 180
   follow: 1
   refFollow: 1
   enemies:
@@ -60928,6 +60932,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  cameraLimits: {x: 0, y: 180}
   offsetCompensation: 0
   follow: 1
   refFollow: 1

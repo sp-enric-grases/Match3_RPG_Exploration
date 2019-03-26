@@ -83,7 +83,10 @@ namespace SocialPoint.Tools
             ft.finalRotation = EditorGUILayout.Vector3Field("Final Camera Rotation", ft.finalRotation);
             ft.timeToFinalRelocation = Mathf.Clamp(EditorGUILayout.FloatField("Time to Final Relocation", ft.timeToFinalRelocation), 0.1f,  Mathf.Infinity);
             ft.curveFinalRelocation = EditorGUILayout.CurveField("Curve", ft.curveFinalRelocation, Color.cyan, new Rect(0, 0, 1, 1));
-            ft.offsetCompensation = EditorGUILayout.FloatField("Final compensation", ft.offsetCompensation);
+            GUILayout.Space(5);
+            EditorGUILayout.LabelField("Limits", EditorStyles.boldLabel);
+            ft.cameraLimits = EditorGUILayout.Vector2Field("Camera Limits", ft.cameraLimits);
+            ft.offsetCompensation = EditorGUILayout.FloatField("Offset", ft.offsetCompensation);
             CheckPathTime();
             Footer();
         }

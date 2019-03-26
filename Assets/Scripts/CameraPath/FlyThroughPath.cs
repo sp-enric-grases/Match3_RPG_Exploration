@@ -26,6 +26,7 @@ namespace SocialPoint.Tools
         public Vector3 finalRotation = Vector3.zero;
         public float timeToFinalRelocation = 1;
         public AnimationCurve curveFinalRelocation = AnimationCurve.EaseInOut(0, 0, 1, 1);
+        public Vector2 cameraLimits = new Vector2(0, 180);
         public float offsetCompensation = 0;
 
         public bool follow = true;
@@ -176,7 +177,8 @@ namespace SocialPoint.Tools
 
             rotation.enabled = true;
             rotation.SetInitRotations(rot.eulerAngles);
-            rotation.offsetRotX = (rotation.offsetRotX + offsetCompensation) % 360;
+            rotation.offsetRotX = offsetCompensation;
+            rotation.limitX = cameraLimits;
             rotation.SetLimits();
             rotation.enabled = false;
         }
