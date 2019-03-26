@@ -94,12 +94,15 @@ namespace SocialPoint.Tools
             cam.GetComponent<CameraRotation>().enabled = false;
             reference = new GameObject("CamPathReference");//  GameObject.CreatePrimitive(PrimitiveType.Cube);
             cam.gameObject.AddComponent<InfluencerDetection>().Init(this, reference);
+            StartCoroutine(canvas.GetComponent<LootManager>().AutoLoot(0.1f));
         }
 
         private void Update()
         {
-            if (startMovement)
+            if (startMovement && canvas.GetComponent<LootManager>().lootList.Count == 0)
+            {
                 MoveCameraAlongThePath();
+            }
             else
                 WaitForTrigger();
         }
