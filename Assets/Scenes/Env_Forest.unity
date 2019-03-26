@@ -30749,7 +30749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f19478f56fc439646a915b4be8dafab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoLootTime: 5
+  autoLootTime: 3
   thresholdTime: 0.2
   startCounting: 0
   lootList: []
