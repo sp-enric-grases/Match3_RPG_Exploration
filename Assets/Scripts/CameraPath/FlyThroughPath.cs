@@ -163,24 +163,21 @@ namespace SocialPoint.Tools
             canvas.ShowTiles();
             canvas.PopulateEnemies(enemies, triggerContainer, door);
 
-            StartCoroutine(SetCameraFinalPosition());
-
             SetCameraFinalPosition();
             Destroy(reference);
             Destroy(finalReference);
             Destroy(cam.GetComponent<InfluencerDetection>());
         }
 
-        IEnumerator SetCameraFinalPosition()
+        private void SetCameraFinalPosition()
         {
-            yield return new WaitForSeconds(1);
-
             Quaternion rot = cam.transform.rotation;
             CameraRotation rotation = cam.GetComponent<CameraRotation>();
 
             rotation.enabled = true;
             rotation.SetInitRotations(rot.eulerAngles);
             rotation.offsetRotX = (rotation.offsetRotX + offsetCompensation) % 360;
+            rotation.SetLimits();
             rotation.enabled = false;
         }
 

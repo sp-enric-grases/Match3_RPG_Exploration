@@ -127,6 +127,14 @@ namespace SocialPoint.Tools
             }
         }
 
+        public void SetLimits()
+        {
+            intLimitX.x = limitX.x;
+            intLimitX.y = limitX.y;
+            intLimitY.x = limitY.x;
+            intLimitY.y = limitY.y;
+        }
+
         private void GetLimits()
         {
             if (!inertia)
