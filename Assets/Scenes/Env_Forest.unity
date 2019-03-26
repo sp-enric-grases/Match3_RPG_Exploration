@@ -13072,7 +13072,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  offsetCompensation: 0
+  offsetCompensation: -30
   follow: 1
   refFollow: 1
   enemies:
