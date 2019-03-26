@@ -10,7 +10,7 @@ namespace SocialPoint.Tools
         public float autoLootTime = 2;
         public float thresholdTime = 0.3f;
         public bool startCounting = false;
-
+        
         public List<Loot> lootList = new List<Loot>();
 
         private float lootCounter;
@@ -33,7 +33,7 @@ namespace SocialPoint.Tools
                 if (lootCounter < 0)
                 {
                     startCounting = false;
-                    StartCoroutine(AutoLoot());
+                    StartCoroutine(AutoLoot(thresholdTime));
                 }
             }
         }
@@ -49,9 +49,12 @@ namespace SocialPoint.Tools
             lootCounter = autoLootTime;
         }
 
-        IEnumerator AutoLoot()
+        public IEnumerator AutoLoot(float threshold)
         {
-            yield return new WaitForSeconds(thresholdTime);
+            if (lootList.Count == 0)
+                yield break;
+            else
+                yield return new WaitForSeconds(threshold);
 
             Loot loot = lootList[0];
 
@@ -63,7 +66,7 @@ namespace SocialPoint.Tools
             lootList.Remove(loot);
 
             if (lootList.Count > 0)
-                StartCoroutine(AutoLoot());
+                StartCoroutine(AutoLoot(threshold));
         }
     }
 }
