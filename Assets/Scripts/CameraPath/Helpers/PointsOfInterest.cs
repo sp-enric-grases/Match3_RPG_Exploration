@@ -6,8 +6,9 @@ namespace SocialPoint.Tools
 {
     public class PointsOfInterest : MonoBehaviour
     {
-        public float timeToRelocation;
-        public float angleThreshold;
+        public float timeToRelocation = 1;
+        public float angleThreshold = 10;
+        public float maxDistance = 25;
         public AnimationCurve curve = AnimationCurve.EaseInOut(0, 0, 1, 1);
         public List<Transform> pointsOfInterest;
 
@@ -18,6 +19,8 @@ namespace SocialPoint.Tools
 
         void Update()
         {
+            if (!GameState.canRotateCamera) return;
+
             if (Input.GetMouseButton(0))
                 ResetParameters();
             else if (recenter)
@@ -26,7 +29,8 @@ namespace SocialPoint.Tools
             {
                 for (int i = 0; i < pointsOfInterest.Count; i++)
                 {
-                    CheckIfRelocate(pointsOfInterest[i].position);
+                    if (pointsOfInterest[i].gameObject.activeSelf)
+                        CheckIfRelocate(pointsOfInterest[i].position);
                 }
             }
         }
@@ -34,9 +38,10 @@ namespace SocialPoint.Tools
         private void CheckIfRelocate(Vector3 pos)
         {
             Vector3 targetDir = pos - transform.position;
+            float distance = (pos - transform.position).magnitude;
             float angle = Vector3.Angle(targetDir, transform.forward);
 
-            if (angle < angleThreshold)
+            if (angle < angleThreshold && distance < maxDistance)
             {
                 recenter = true;
                 direction = pos - transform.position;

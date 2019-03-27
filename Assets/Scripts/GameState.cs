@@ -4,5 +4,6 @@
     {
         public static bool startFromBegining = true;
         public static bool canShowInventory = true;
+        public static bool canRotateCamera = true;
     }
 }

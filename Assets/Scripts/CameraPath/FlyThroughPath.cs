@@ -92,8 +92,7 @@ namespace SocialPoint.Tools
         public void RunPath()
         {
             startMovement = true;
-            cam.GetComponent<CameraRotation>().enabled = false;
-            reference = new GameObject("CamPathReference");//  GameObject.CreatePrimitive(PrimitiveType.Cube);
+            reference = new GameObject("CamPathReference");
             cam.gameObject.AddComponent<InfluencerDetection>().Init(this, reference);
             canvas.GetComponent<LootManager>().StopCoroutine();
         }
@@ -141,7 +140,6 @@ namespace SocialPoint.Tools
                 if (Input.GetMouseButtonUp(0) && !mouseHasBeenDrag && hit.collider == trigger)
                 {
                     RunPath();
-                    startMovement = true;
                     trigger.GetComponent<Animator>().SetBool("Fade", true);
                 }
             }
