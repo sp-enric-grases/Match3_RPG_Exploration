@@ -79,8 +79,6 @@ namespace SocialPoint.Tools
 
         void Update()
         {
-            Debug.Log(GameState.canShowInventory);
-
             if (numberOfEnemies > 0) return;
 
             int layerMask = 1 << LayerMask.NameToLayer("InteractableObject");
@@ -152,6 +150,7 @@ namespace SocialPoint.Tools
             else
                 anim.SetTrigger("HideInventory");
 
+            cam.GetComponent<Animator>().SetBool("ShowInventory", !inventoryIsVisible);
             inventoryIsVisible = !inventoryIsVisible;
         }
 
@@ -163,13 +162,16 @@ namespace SocialPoint.Tools
                 inventoryIsVisible = state;
             }
 
+            cam.GetComponent<Animator>().SetBool("ShowInventory", state);
             cam.GetComponent<CameraRotation>().enabled = state;
             GameState.canShowInventory = state;
+            GameState.canRotateCamera = state;
         }
 
         public void ShowTiles()
         {
             anim.SetTrigger("ShowTiles");
+            cam.GetComponent<Animator>().SetBool("ShowInventory", true);
         }
 
         private void TriggerTextAnimation(TypeOfLoot loot)
