@@ -252,6 +252,8 @@ namespace SocialPoint.Tools
         {
             AudioManager.Instance.ChangeMusicWithFade(AudiosData.MUSIC, 1, 0.7f);
             GameState.startFromBegining = true;
+            GameState.canShowInventory = true;
+            GameState.canRotateCamera = true;
             UnityEngine.SceneManagement.SceneManager.LoadScene("Env_Forest");
         }
     }
