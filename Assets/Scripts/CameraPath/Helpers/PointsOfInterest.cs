@@ -10,12 +10,22 @@ namespace SocialPoint.Tools
         public float angleThreshold = 10;
         public float maxDistance = 25;
         public AnimationCurve curve = AnimationCurve.EaseInOut(0, 0, 1, 1);
-        public List<Transform> pointsOfInterest;
+        public GameObject pointsOfInterest;
 
+        private List<Transform> points = new List<Transform>();
         private Vector3 direction;
         private Quaternion toRotation;
         private float counterFinalRelocation = 0;
         private bool recenter;
+
+        private void Start()
+        {
+            for (int i = 0; i < pointsOfInterest.transform.childCount; i++)
+            {
+                if (pointsOfInterest.transform.GetChild(i).gameObject.activeSelf)
+                    points.Add(pointsOfInterest.transform.GetChild(i));
+            }
+        }
 
         void Update()
         {
@@ -27,10 +37,10 @@ namespace SocialPoint.Tools
                 RecenterCamera();
             else
             {
-                for (int i = 0; i < pointsOfInterest.Count; i++)
+                for (int i = 0; i < points.Count; i++)
                 {
-                    if (pointsOfInterest[i].gameObject.activeSelf)
-                        CheckIfRelocate(pointsOfInterest[i].position);
+                    if (points[i].gameObject.activeSelf)
+                        CheckIfRelocate(points[i].position);
                 }
             }
         }
