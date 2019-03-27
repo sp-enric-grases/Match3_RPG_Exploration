@@ -27,6 +27,7 @@ namespace SocialPoint.Tools
         private List<GameObject> trigger;
         private Animator door;
         private LootManager lm;
+        private bool inventoryIsVisible = false;
 
         [HideInInspector] public int numberOfEnemies;
         [HideInInspector] public int numberOfLoot;
@@ -37,6 +38,7 @@ namespace SocialPoint.Tools
         {
             cam.gameObject.GetComponent<CameraEvents>().CameraEventEndForest += ShowEndCanvas;
             cam.gameObject.GetComponent<CameraEvents>().CameraEventDungeon += GoToDungeons;
+
             lm = GetComponent<LootManager>();
             anim = GetComponent<Animator>();
 
@@ -77,6 +79,8 @@ namespace SocialPoint.Tools
 
         void Update()
         {
+            Debug.Log(GameState.canShowInventory);
+
             if (numberOfEnemies > 0) return;
 
             int layerMask = 1 << LayerMask.NameToLayer("InteractableObject");
@@ -95,7 +99,6 @@ namespace SocialPoint.Tools
                         DestroyImmediate(hit.collider.gameObject);
                         break;
                     case "Chest":
-                        //hit.collider.GetComponent<Chest>().CreateLootChest(this, lootPosition);
                         hit.collider.GetComponent<Chest>().CreateLootChest();
                         break;
                     case "Crate":
@@ -140,24 +143,33 @@ namespace SocialPoint.Tools
                 mouseHasBeenDrag = true;
         }
 
-        public void ShowInventary()
+        public void InventoryVisibility()
         {
-            anim.SetBool("showTiles", false);
-            anim.SetBool("showInv", true);
-            cam.GetComponent<CameraRotation>().enabled = true;
+            if (!GameState.canShowInventory) return;
+
+            if (!inventoryIsVisible)
+                anim.SetTrigger("ShowInventory");
+            else
+                anim.SetTrigger("HideInventory");
+
+            inventoryIsVisible = !inventoryIsVisible;
         }
 
-        public void HideInventary()
+        public void InventoryState(bool state, string animation)
         {
-            anim.SetBool("showInv", false);
-            anim.SetBool("hideInv", true);
-            cam.GetComponent<CameraRotation>().enabled = false;
+            if (inventoryIsVisible == !state)
+            {
+                anim.SetTrigger(animation);
+                inventoryIsVisible = state;
+            }
+
+            cam.GetComponent<CameraRotation>().enabled = state;
+            GameState.canShowInventory = state;
         }
 
         public void ShowTiles()
         {
-            anim.SetBool("hideInv", false);
-            anim.SetBool("showTiles", true);
+            anim.SetTrigger("ShowTiles");
         }
 
         private void TriggerTextAnimation(TypeOfLoot loot)
@@ -206,7 +218,7 @@ namespace SocialPoint.Tools
 
             if (numberOfEnemies == 0)
             {
-                ShowInventary();
+                InventoryState(true, "ShowInventory");
 
                 foreach (var item in trigger)
                     item.SetActive(true);

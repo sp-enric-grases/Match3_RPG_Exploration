@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 namespace SocialPoint.Tools
 {
@@ -9,12 +8,14 @@ namespace SocialPoint.Tools
     {
         public float autoLootTime = 2;
         public float thresholdTime = 0.3f;
+        public float thresholdExitTime = 0.05f;
         public bool startCounting = false;
         
         public List<Loot> lootList = new List<Loot>();
 
         private float lootCounter;
         private CanvasManager cm;
+        private Coroutine looting;
 
         void Start()
         {
@@ -33,7 +34,7 @@ namespace SocialPoint.Tools
                 if (lootCounter < 0)
                 {
                     startCounting = false;
-                    StartCoroutine(AutoLoot(thresholdTime));
+                    looting = StartCoroutine(AutoLoot(thresholdTime));
                 }
             }
         }
@@ -47,6 +48,16 @@ namespace SocialPoint.Tools
 
             startCounting = true;
             lootCounter = autoLootTime;
+        }
+
+        public void StopCoroutine()
+        {
+            startCounting = false;
+
+            if (looting != null)
+                StopCoroutine(looting);
+
+            looting = StartCoroutine(AutoLoot(thresholdExitTime));
         }
 
         public IEnumerator AutoLoot(float threshold)

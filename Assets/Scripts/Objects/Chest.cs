@@ -24,38 +24,11 @@ namespace SocialPoint.Tools
 
         public void OpenChest()
         {
-            if (cm != null) cm.ShowInventary();
+            if (cm != null) cm.InventoryState(true, "ShowInventory");
 
             anim.SetBool("openChest", true);
             AudioManager.Instance.PlayEffect(AudiosData.CHEST);
-            //AudioManager.Instance.PlayEffect(AudiosData.TREASURE);
-            //countLoot++;
         }
-
-        //public void CreateLootChest(CanvasManager cm, Vector3 pos)
-        //{
-        //    if (countLoot > numLoot) return;
-
-        //    if (countLoot == 0)
-        //        OpenChest();
-        //    else
-        //    {
-        //        if (countLoot < numLoot)
-        //        {
-        //            countLoot++;
-
-        //            TypeOfLoot loot = GetChestLoot();
-
-        //            if (loot == TypeOfLoot.Coins)
-        //                cm.CreateRainCoins(pos);
-        //            else
-        //                cm.CreateCanvasLoot(pos, loot);
-
-        //            if (countLoot == numLoot)
-        //                StopParticles();
-        //        }
-        //    }
-        //}
 
         public void CreateLootChest()
         {
