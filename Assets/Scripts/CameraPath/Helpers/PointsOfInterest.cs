@@ -11,74 +11,60 @@ namespace SocialPoint.Tools
         public AnimationCurve curve = AnimationCurve.EaseInOut(0, 0, 1, 1);
         public List<Transform> pointsOfInterest;
 
-        private bool isRecentering;
-        private bool haveBeenRecentered;
+        private Vector3 direction;
+        private Quaternion toRotation;
         private float counterFinalRelocation = 0;
-        private bool mouseIsDrag = false;
-
-        void Start()
-        {
-
-        }
+        private bool recenter;
 
         void Update()
         {
             if (Input.GetMouseButton(0))
-            {
-                //mouseIsDrag = false;
-                GetComponent<CameraRotation>().enabled = true;
-            }
+                ResetParameters();
+            else if (recenter)
+                RecenterCamera();
             else
             {
-                CheckIfRelocate();
+                for (int i = 0; i < pointsOfInterest.Count; i++)
+                {
+                    CheckIfRelocate(pointsOfInterest[i].position);
+                }
             }
-            
-            Debug.DrawLine(pointsOfInterest[0].position, transform.position, Color.green);
-
-            //if (!mouseIsDrag) CheckIfRelocate();
-
-            //if (isRecentering)
-            //{
-            //    RecenterCamera(targetDir);
-            //}
-
-            //Debug.Log("Is Recentering: " + isRecentering);
-            //Debug.Log("Have been recentered: " + haveBeenRecentered);
         }
 
-        private void RecenterCamera(Vector3 target)
+        private void CheckIfRelocate(Vector3 pos)
         {
-            counterFinalRelocation += Time.deltaTime / timeToRelocation;
-            Quaternion toRotation = Quaternion.FromToRotation(transform.forward, target);
-            transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, curve.Evaluate(counterFinalRelocation));
-
-            //if (counterFinalRelocation >= timeToRelocation)
-            //{
-            //    counterFinalRelocation = 0;
-            //    isRecentering = false;
-            //    haveBeenRecentered = true;
-            //    GetComponent<CameraRotation>().SetInitRotations(transform.eulerAngles);
-            //    GetComponent<CameraRotation>().enabled = true;
-            //}
-        }
-
-        void OnGUI()
-        {
-            if (Event.current.type == EventType.MouseDrag) mouseIsDrag = true;
-        }
-
-        private void CheckIfRelocate()
-        {
-            Vector3 targetDir = pointsOfInterest[0].position - transform.position;
+            Vector3 targetDir = pos - transform.position;
             float angle = Vector3.Angle(targetDir, transform.forward);
 
             if (angle < angleThreshold)
             {
+                recenter = true;
+                direction = pos - transform.position;
+                toRotation = Quaternion.FromToRotation(Vector3.forward, direction);
+                Vector3 rot = toRotation.eulerAngles;
+                rot.z = 0;
+                toRotation = Quaternion.Euler(rot);
 
-                //RecenterCamera(targetDir);
+
                 GetComponent<CameraRotation>().enabled = false;
-                Debug.DrawLine(pointsOfInterest[0].position, transform.position, Color.magenta);
             }
+        }
+
+        private void RecenterCamera()
+        {
+            counterFinalRelocation += Time.deltaTime / timeToRelocation;
+            transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, curve.Evaluate(counterFinalRelocation));
+
+            if (counterFinalRelocation >= 1)
+                ResetParameters();
+        }
+
+        private void ResetParameters()
+        {
+            counterFinalRelocation = 0;
+            recenter = false;
+            GetComponent<CameraRotation>().SetInitRotations(transform.eulerAngles);
+            GetComponent<CameraRotation>().enabled = true;
         }
     }
 }
