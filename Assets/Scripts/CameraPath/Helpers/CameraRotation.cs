@@ -129,8 +129,8 @@ namespace SocialPoint.Tools
 
         public void SetLimits()
         {
-            intLimitX.x = limitX.x;
-            intLimitX.y = limitX.y;
+            intLimitX.x = limitX.x + offsetRotX - 180;
+            intLimitX.y = limitX.y + offsetRotX - 180;
             intLimitY.x = limitY.x;
             intLimitY.y = limitY.y;
         }
